@@ -45,7 +45,7 @@ const Orders = () => {
     });
   
     return () => unsubscribe();
-  }, [router]); // <- Router ko dependencies array mein add karein
+  }, []); // <- Router ko dependencies array mein add karein
   
 
   // Fetch orders if the user is the admin.

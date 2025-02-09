@@ -23,8 +23,12 @@ const SignIn = () => {
       setTimeout(() => {
         router.push("/orders");
       }, 1000);
-    } catch (error: any) {
-      setMessage({ text: `❌ ${error.message || "Incorrect email or password."}`, type: "error" });
+    } catch (error) {
+      let errorMessage = "❌ Incorrect email or password.";
+      if (error instanceof Error) {
+        errorMessage = `❌ ${error.message}`;
+      }
+      setMessage({ text: errorMessage, type: "error" });
     } finally {
       setLoading(false);
     }
