@@ -43,9 +43,10 @@ const Orders = () => {
         router.push("/sign-in"); // Redirect to login page if not authenticated.
       }
     });
-
+  
     return () => unsubscribe();
-  }, [router]);
+  }, [router]); // <- Router ko dependencies array mein add karein
+  
 
   // Fetch orders if the user is the admin.
   useEffect(() => {
